@@ -1,13 +1,16 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using Clockwork.API.Models;
+using System.Web.Http.Cors;
 
 namespace Clockwork.API.Controllers
 {
+    
     [Route("api/[controller]")]
     public class CurrentTimeController : Controller
     {
         // GET api/currenttime
+        [EnableCors(origins: "http://localhost:61426", headers: "*", methods: "*")]
         [HttpGet]
         public IActionResult Get()
         {
